@@ -135,9 +135,7 @@ void intSystem(IntComponent & a)
 
 void intSystem(ComponentManager & man)
 {
-    std::vector<IntComponent> * vec = man.getComponents<IntComponent>();
-
-    for (auto & a : *vec)
+    for (auto & a : man.range<IntComponent>())
     {
         intSystem(a);
     }
@@ -154,9 +152,7 @@ void floatSystem(FloatComponent & a)
 
 void floatSystem(ComponentManager & man)
 {
-    std::vector<FloatComponent> * vec = man.getComponents<FloatComponent>();
-
-    for (auto & a : *vec)
+    for (auto & a : man.range<FloatComponent>())
     {
         floatSystem(a);
     }
@@ -185,9 +181,7 @@ void versSystem(VersComponent & a)
 
 void versSystem(ComponentManager & man)
 {
-    std::vector<VersComponent> * vec = man.getComponents<VersComponent>();
-
-    for (auto & a : *vec)
+    for (auto & a : man.range<VersComponent>())
     {
         versSystem(a);
     }
@@ -336,7 +330,7 @@ int main()
     ComponentManager man;
     std::vector<RobustObj> vec;
     int count = 3000;
-    long updCount = 50000;
+    long updCount = 5000;
 
     Timer timer;
 
