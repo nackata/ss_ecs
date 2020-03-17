@@ -15,11 +15,11 @@ class ComponentManager
 
 public:
     template<class T>
-    using vector_type = std::vector<T>;
+    using container_type = std::vector<T>;
     template<class T>
-    using iterator = typename vector_type<T>::iterator;
+    using iterator = typename container_type<T>::iterator;
     template<class T>
-    using const_iterator = typename vector_type<T>::const_iterator;
+    using const_iterator = typename container_type<T>::const_iterator;
 
     template<class T>
     class Iter_range
@@ -38,6 +38,7 @@ public:
     template<class T>
     Iter_range<T> range() noexcept { return Iter_range<T>{*this}; }
 
+    //hello world lkj
 
     template<class T>
     void addComponent(T component)
